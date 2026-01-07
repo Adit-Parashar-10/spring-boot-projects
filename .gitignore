@@ -1,0 +1,33 @@
+# ========================
+# Maven / Gradle
+# ========================
+target/
+build/
+
+# ========================
+# IDEs
+# ========================
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Logs
+# ========================
+*.log
+
+# ========================
+# Env / Secrets
+# ========================
+.env
+application-local.yml
+application-dev.yml
