@@ -1,17 +1,18 @@
-package com.adit.studentmanagement.controller;
+package com.adit.studentmanagement.controller.v1;
 
 import java.util.List;
 
+import com.adit.studentmanagement.dto.v1.StudentRequestDTO;
+import com.adit.studentmanagement.dto.v1.StudentResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.adit.studentmanagement.dto.*;
 import com.adit.studentmanagement.service.StudentService;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/students/v1")
 @CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
 
@@ -38,8 +39,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public StudentResponseDTO update(@PathVariable Long id,
-                                     @Valid @RequestBody StudentRequestDTO dto) {
+    public StudentResponseDTO update(@PathVariable Long id, @Valid @RequestBody StudentRequestDTO dto) {
         return service.updateStudent(id, dto);
     }
 

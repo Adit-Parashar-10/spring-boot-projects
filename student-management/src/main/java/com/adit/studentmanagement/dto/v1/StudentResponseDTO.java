@@ -1,4 +1,4 @@
-package com.adit.studentmanagement.dto;
+package com.adit.studentmanagement.dto.v1;
 
 import lombok.*;
 

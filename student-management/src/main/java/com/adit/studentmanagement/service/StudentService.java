@@ -1,8 +1,8 @@
 package com.adit.studentmanagement.service;
 
 import java.util.List;
-import com.adit.studentmanagement.dto.StudentRequestDTO;
-import com.adit.studentmanagement.dto.StudentResponseDTO;
+import com.adit.studentmanagement.dto.v1.StudentRequestDTO;
+import com.adit.studentmanagement.dto.v1.StudentResponseDTO;
 
 public interface StudentService {
 

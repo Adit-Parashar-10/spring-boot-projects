@@ -3,9 +3,10 @@ package com.adit.studentmanagement.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.adit.studentmanagement.dto.v1.StudentRequestDTO;
+import com.adit.studentmanagement.dto.v1.StudentResponseDTO;
 import org.springframework.stereotype.Service;
 
-import com.adit.studentmanagement.dto.*;
 import com.adit.studentmanagement.entity.Student;
 import com.adit.studentmanagement.exception.StudentNotFoundException;
 import com.adit.studentmanagement.repository.StudentRepository;
