@@ -1,5 +1,6 @@
 package com.company.ems.service.admin;
 
+import com.company.ems.dto.v1.admin.AdminRequestDTO;
 import com.company.ems.entity.Employee;
 import com.company.ems.repository.EmployeeRepository;
 import com.company.ems.service.EmployerService;
@@ -14,6 +15,15 @@ public class AdminEmployeeService implements EmployerService {
 
     public AdminEmployeeService(EmployeeRepository employeeRepository){
         this.employeeRepository=employeeRepository;
+    }
+
+    public Employee createEmployee(AdminRequestDTO dto) {
+        Employee employee = new Employee();
+        employee.setName(dto.getName());
+        employee.setEmail(dto.getEmail());
+        employee.setRole((dto.getRole()));
+
+        return employeeRepository.save(employee);
     }
 
     @Override
