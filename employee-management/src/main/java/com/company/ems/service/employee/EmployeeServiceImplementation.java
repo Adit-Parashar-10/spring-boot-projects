@@ -1,5 +1,6 @@
 package com.company.ems.service.employee;
 
+import com.company.ems.dto.v1.employee.EmployeeRequestDTO;
 import com.company.ems.entity.Employee;
 import com.company.ems.repository.EmployeeRepository;
 import com.company.ems.service.EmployerService;
@@ -31,14 +32,18 @@ public class EmployeeServiceImplementation implements EmployerService {
         return employeeRepository.findById(id).orElseThrow( ()-> new RuntimeException("Entered wrong id !!!") );
     }
 
-    @Override
-    public Employee updateEmployee(Long id, Employee employee) {
+    public Employee updateEmployee(Long id, EmployeeRequestDTO dto) {
 
         Employee exist = employeeRepository.findById(id).orElseThrow( ()-> new RuntimeException("Entered wrong id !!!") );
 
-        exist.setName(employee.getName());
+        exist.setName(dto.getName());
 
         return employeeRepository.save(exist);
+    }
+
+    @Override
+    public Employee updateEmployee(Long id, Employee employee) {
+        throw new RuntimeException("Employee can't update using entity object");
     }
 
     @Override

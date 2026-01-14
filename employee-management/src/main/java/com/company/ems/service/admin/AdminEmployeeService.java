@@ -41,16 +41,26 @@ public class AdminEmployeeService implements EmployerService {
         return employeeRepository.findById(id).orElseThrow( ()-> new RuntimeException("employee not found"));
     }
 
-    @Override
-    public Employee updateEmployee(Long id, Employee employee) {
+    public Employee updateEmployee(Long id, AdminRequestDTO dto) {
 
         Employee exist = employeeRepository.findById(id).orElseThrow( ()-> new RuntimeException("employee not found") );
 
-        exist.setName(employee.getName());
-        exist.setEmail(employee.getEmail());
-        exist.setRole(employee.getRole());
+        exist.setName(dto.getName());
+        exist.setEmail(dto.getEmail());
+        exist.setRole(dto.getRole());
 
         return employeeRepository.save(exist);
+    }
+
+    @Override
+    public Employee updateEmployee(Long id, Employee employee) {
+
+        AdminRequestDTO dto = new AdminRequestDTO();
+        dto.setName(employee.getName());
+        dto.setEmail(employee.getEmail());
+        dto.setRole(employee.getRole());
+
+        return updateEmployee(id, dto);
     }
 
     @Override
