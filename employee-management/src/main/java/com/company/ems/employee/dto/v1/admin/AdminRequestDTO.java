@@ -1,5 +1,4 @@
-package com.company.ems.dto.v1.employee;
-
+package com.company.ems.employee.dto.v1.admin;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,10 +9,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class EmployeeProfileResponseDTO {
+public class AdminRequestDTO {
 
-    private Long id;
     private String name;
     private String email;
+    private String role;
 
 }

@@ -1,7 +1,7 @@
-package com.company.ems.config;
+package com.company.ems.employee.config;
 
-import com.company.ems.entity.Employee;
-import com.company.ems.repository.EmployeeRepository;
+import com.company.ems.employee.entity.Employee;
+import com.company.ems.employee.repository.EmployeeRepository;
 import jakarta.annotation.PostConstruct;
 
 public class DataInitializer {

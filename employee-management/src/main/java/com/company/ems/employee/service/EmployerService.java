@@ -1,6 +1,6 @@
-package com.company.ems.service;
+package com.company.ems.employee.service;
 
-import com.company.ems.entity.Employee;
+import com.company.ems.employee.entity.Employee;
 
 import java.util.List;
 

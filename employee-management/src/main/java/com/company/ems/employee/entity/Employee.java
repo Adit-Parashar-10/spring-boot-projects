@@ -1,4 +1,4 @@
-package com.company.ems.entity;
+package com.company.ems.employee.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

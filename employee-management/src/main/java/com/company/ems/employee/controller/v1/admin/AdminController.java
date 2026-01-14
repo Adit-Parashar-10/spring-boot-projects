@@ -1,9 +1,9 @@
-package com.company.ems.controller.v1.admin;
+package com.company.ems.employee.controller.v1.admin;
 
-import com.company.ems.dto.v1.admin.AdminEmployeeResponseDTO;
-import com.company.ems.dto.v1.admin.AdminRequestDTO;
-import com.company.ems.entity.Employee;
-import com.company.ems.service.admin.AdminEmployeeService;
+import com.company.ems.employee.dto.v1.admin.AdminEmployeeResponseDTO;
+import com.company.ems.employee.dto.v1.admin.AdminRequestDTO;
+import com.company.ems.employee.entity.Employee;
+import com.company.ems.employee.service.admin.AdminEmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

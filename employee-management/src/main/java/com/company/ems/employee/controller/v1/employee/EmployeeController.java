@@ -1,9 +1,9 @@
-package com.company.ems.controller.v1.employee;
+package com.company.ems.employee.controller.v1.employee;
 
-import com.company.ems.dto.v1.employee.EmployeeProfileResponseDTO;
-import com.company.ems.dto.v1.employee.EmployeeRequestDTO;
-import com.company.ems.entity.Employee;
-import com.company.ems.service.employee.EmployeeServiceImplementation;
+import com.company.ems.employee.dto.v1.employee.EmployeeProfileResponseDTO;
+import com.company.ems.employee.dto.v1.employee.EmployeeRequestDTO;
+import com.company.ems.employee.entity.Employee;
+import com.company.ems.employee.service.employee.EmployeeServiceImplementation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

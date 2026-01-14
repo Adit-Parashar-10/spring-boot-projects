@@ -1,9 +1,9 @@
-package com.company.ems.service.admin;
+package com.company.ems.employee.service.admin;
 
-import com.company.ems.dto.v1.admin.AdminRequestDTO;
-import com.company.ems.entity.Employee;
-import com.company.ems.repository.EmployeeRepository;
-import com.company.ems.service.EmployerService;
+import com.company.ems.employee.dto.v1.admin.AdminRequestDTO;
+import com.company.ems.employee.entity.Employee;
+import com.company.ems.employee.repository.EmployeeRepository;
+import com.company.ems.employee.service.EmployerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
