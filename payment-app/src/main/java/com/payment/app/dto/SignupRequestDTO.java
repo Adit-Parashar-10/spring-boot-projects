@@ -9,8 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PaymentRequestDTO {
-    private String orderId;
-    private double amount;
-    private Long userId;
+public class SignupRequestDTO {
+    private String email;
+    private String password;
 }
+

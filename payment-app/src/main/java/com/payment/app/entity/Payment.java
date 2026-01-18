@@ -25,6 +25,8 @@ public class Payment {
     @Column(nullable = false, unique = true)
     private String orderId;
 
+    private Long userId;
+
     private double amount;
 
     @Enumerated(EnumType.STRING)

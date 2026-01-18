@@ -19,7 +19,7 @@ public class PaymentController {
 
     @PostMapping("/v1/pay")
     public ResponseEntity<PaymentResponseDTO> pay(@RequestBody PaymentRequestDTO dto) {
-        PaymentResult st = paymentService.processPayment(dto.getOrderId(), dto.getAmount());
+        PaymentResult st = paymentService.processPayment(dto.getOrderId(), dto.getAmount(), dto.getUserId());
         PaymentResponseDTO res = new PaymentResponseDTO(dto.getOrderId(), st.name());
         return ResponseEntity.ok(res);
     }
