@@ -8,7 +8,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import com.payment.app.model.BankResult;
 import com.payment.app.model.PaymentResult;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -92,4 +91,39 @@ public class PaymentService {
 
         return new PaymentResponseDTO(payment.getOrderId(), payment.getStatus().name());
     }
+
+    @Transactional
+    public List<PaymentResponseDTO> getPaymentsByUser(Long userId) {
+
+        List<Payment> payments = paymentRepository.findByUserId(userId);
+
+        List<PaymentResponseDTO> response = new ArrayList<>();
+
+        for (Payment payment : payments) {
+            response.add(new PaymentResponseDTO(payment.getOrderId(), payment.getStatus().name()));
+        }
+        return response;
+    }
+
+    @Transactional
+    public List<PaymentResponseDTO> getPaymentsByStatus(String status) {
+
+        PaymentResult st = PaymentResult.valueOf(status.toUpperCase());
+        List<Payment> payments = paymentRepository.findByStatus(st);
+
+        List<PaymentResponseDTO> res = new ArrayList<>();
+
+        for (Payment p : payments) {
+            res.add(new PaymentResponseDTO(
+                    p.getOrderId(),
+                    p.getStatus().name()
+            ));
+        }
+        return res;
+    }
+
+
+
+
+
 }

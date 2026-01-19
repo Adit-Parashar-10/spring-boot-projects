@@ -7,14 +7,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.payment.app.service.PaymentService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/payments")
-public class PaymentController {
+public class UserPaymentController {
 
     private final PaymentService paymentService;
 
-    public PaymentController(PaymentService paymentService) {
+    public UserPaymentController(PaymentService paymentService) {
         this.paymentService = paymentService;
+    }
+
+    @GetMapping("/v1/{orderId}")
+    public ResponseEntity<PaymentResponseDTO> getPaymentStatus(
+            @PathVariable String orderId) {
+        return ResponseEntity.ok(paymentService.getPayments(orderId));
     }
 
     @PostMapping("/v1/pay")
@@ -23,4 +31,12 @@ public class PaymentController {
         PaymentResponseDTO res = new PaymentResponseDTO(dto.getOrderId(), st.name());
         return ResponseEntity.ok(res);
     }
+
+    @GetMapping("/v1/{userId}")
+    public ResponseEntity<List<PaymentResponseDTO>> getUserPayments(@RequestParam Long userId) {
+        return ResponseEntity.ok(paymentService.getPaymentsByUser(userId));
+    }
+
+
+
 }

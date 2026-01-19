@@ -30,4 +30,14 @@ public class AdminController {
     public ResponseEntity<PaymentResponseDTO> getPayment(@PathVariable String orderId){
         return ResponseEntity.ok(paymentService.getPayments(orderId));
     }
+
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<PaymentResponseDTO>> getByStatus(
+            @PathVariable String status) {
+
+        return ResponseEntity.ok(
+                paymentService.getPaymentsByStatus(status)
+        );
+    }
+
 }
